@@ -3,24 +3,31 @@
   margin-left: 320px;
   flex: 1;
   background: var(--background-color);
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   transition: var(--transition);
 }
 
 .content-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 2rem;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   animation: fadeInUp 0.8s ease-out;
 }
 
 /* Sección Inicio */
 .inicio-section {
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -36,10 +43,10 @@
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -192,14 +199,20 @@
 
 /* Sección Proyectos */
 .proyectos-section {
-  padding: 4rem 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-height: 60vh;
+  overflow: hidden;
 }
 
 .proyecto-card {
@@ -309,14 +322,20 @@
 
 /* Sección Skills */
 .skills-section {
-  padding: 4rem 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  max-height: 50vh;
+  overflow: hidden;
 }
 
 .skill-category {
@@ -453,7 +472,11 @@
 
 /* Sección Sobre Mí */
 .sobre-mi-section {
-  padding: 4rem 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .sobre-mi-content {
@@ -593,7 +616,90 @@
 
 /* Sección Contacto */
 .contacto-section {
-  padding: 4rem 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Sección Idioma */
+.idioma-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.idioma-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.idioma-card {
+  background: white;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.idioma-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.idioma-flag {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.idioma-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.idioma-description {
+  color: var(--text-light-color);
+  font-size: 1rem;
+}
+
+.idioma-info {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background: rgba(52, 152, 219, 0.05);
+  border: 1px solid rgba(52, 152, 219, 0.1);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+}
+
+.info-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.info-card p {
+  color: var(--text-light-color);
+  line-height: 1.6;
 }
 
 .contacto-content {

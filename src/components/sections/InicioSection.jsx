@@ -6,15 +6,13 @@ const InicioSection = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            ¡Hola! Soy <span className="accent-text">Tu Nombre</span>
+            ¡Hola! soy <span className="accent-text">Florencia</span>
           </h1>
           <h2 className="hero-subtitle">
-            Desarrollador Full Stack especializado en React
+            Desarrolladora Full Stack especializada en React
           </h2>
           <p className="hero-description">
-            Transformo ideas en experiencias digitales excepcionales. 
-            Con pasión por el código limpio y las soluciones innovadoras, 
-            creo aplicaciones web que marcan la diferencia.
+            Transformo ideas en experiencias digitales excepcionales. Con pasión por el código limpio y las soluciones innovadoras, creo aplicaciones web que marcan la diferencia.
           </p>
           
           <div className="hero-stats">
@@ -61,7 +59,7 @@ const InicioSection = () => {
               </div>
               <div className="code-line code-indent">
                 <span className="code-property">name:</span> 
-                <span className="code-string">'Tu Nombre'</span>,
+                <span className="code-string">'Florencia'</span>,
               </div>
               <div className="code-line code-indent">
                 <span className="code-property">skills:</span> 
@@ -81,11 +79,6 @@ const InicioSection = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="scroll-indicator">
-        <div className="scroll-arrow">↓</div>
-        <span>Explora mi trabajo</span>
       </div>
     </section>
   )

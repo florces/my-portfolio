@@ -34,16 +34,18 @@ const SkillsSection = () => {
   return (
     <section className="skills-section">
       <div className="section-header">
-        <h2 className="section-title">Skills</h2>
+        <h2 className="section-title">Habilidades</h2>
         <p className="section-subtitle">
-          Tecnologías y herramientas que domino
+          Tecnologías y herramientas que domino para crear soluciones increíbles
         </p>
       </div>
 
       <div className="skills-grid">
         {skillCategories.map((category, index) => (
           <div key={index} className="skill-category">
-            <h3 className="category-title">{category.categoria}</h3>
+            <h3 className="category-title">
+              {category.categoria}
+            </h3>
             <div className="skills-list">
               {category.skills.map((skill, skillIndex) => (
                 <div key={skillIndex} className="skill-item">
@@ -71,7 +73,7 @@ const SkillsSection = () => {
           <div className="cert-item">
             <span className="cert-icon">🏆</span>
             <div className="cert-info">
-              <h4>React Developer Certification</h4>
+              <h4>React Professional Certificate</h4>
               <p>Meta - 2023</p>
             </div>
           </div>

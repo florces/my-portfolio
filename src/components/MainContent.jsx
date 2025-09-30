@@ -4,6 +4,7 @@ import ProyectosSection from './sections/ProyectosSection'
 import SobreMiSection from './sections/SobreMiSection'
 import SkillsSection from './sections/SkillsSection'
 import ContactoSection from './sections/ContactoSection'
+import IdiomaSection from './sections/IdiomaSection'
 import './MainContent.css'
 
 const MainContent = ({ activeSection }) => {
@@ -19,6 +20,8 @@ const MainContent = ({ activeSection }) => {
         return <SkillsSection />
       case 'contacto':
         return <ContactoSection />
+      case 'idioma':
+        return <IdiomaSection />
       default:
         return <InicioSection />
     }

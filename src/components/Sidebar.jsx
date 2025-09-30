@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Sidebar.css'
 
 const Sidebar = ({ activeSection, setActiveSection, currentTheme, setCurrentTheme, themes }) => {
@@ -10,9 +10,9 @@ const Sidebar = ({ activeSection, setActiveSection, currentTheme, setCurrentThem
     { id: 'contacto', label: 'Contacto', icon: '📬' }
   ]
 
-  const themeLabels = {
+  const themeNames = {
     professional: 'Profesional',
-    modern: 'Moderno',
+    modern: 'Moderno', 
     creative: 'Creativo',
     minimal: 'Minimalista'
   }
@@ -24,8 +24,8 @@ const Sidebar = ({ activeSection, setActiveSection, currentTheme, setCurrentThem
           <div className="profile-avatar">
             <span>FL</span>
           </div>
-          <h2 className="profile-name">Tu Nombre</h2>
-          <p className="profile-title">Desarrollador Full Stack</p>
+          <h2 className="profile-name">Florencia</h2>
+          <p className="profile-title">Desarrolladora Full Stack</p>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ const Sidebar = ({ activeSection, setActiveSection, currentTheme, setCurrentThem
       </nav>
 
       <div className="theme-selector">
-        <h3 className="theme-title">🎨 Theme</h3>
+        <h3 className="theme-title">🎨 Tema</h3>
         <div className="theme-options">
           {themes.map((theme) => (
             <button
@@ -56,10 +56,19 @@ const Sidebar = ({ activeSection, setActiveSection, currentTheme, setCurrentThem
                 <div className="theme-color primary"></div>
                 <div className="theme-color accent"></div>
               </div>
-              <span className="theme-name">{themeLabels[theme]}</span>
+              <span className="theme-name">{themeNames[theme] || theme}</span>
             </button>
           ))}
         </div>
+      </div>
+
+      <div className="language-selector">
+        <button 
+          className="language-button"
+          onClick={() => setActiveSection('idioma')}
+        >
+          🌍 IDIOMA
+        </button>
       </div>
 
       <div className="sidebar-footer">

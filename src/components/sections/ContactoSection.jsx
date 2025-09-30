@@ -25,7 +25,7 @@ const ContactoSection = () => {
       <div className="section-header">
         <h2 className="section-title">Contacto</h2>
         <p className="section-subtitle">
-          ¡Hablemos sobre tu próximo proyecto!
+          ¿Tienes un proyecto en mente? ¡Hablemos y hagámoslo realidad!
         </p>
       </div>
 
@@ -33,46 +33,47 @@ const ContactoSection = () => {
         <div className="contacto-info">
           <h3>¿Tienes un proyecto en mente?</h3>
           <p>
-            Estoy siempre interesado en nuevas oportunidades y 
-            proyectos desafiantes. No dudes en contactarme.
+            Me encantaría escuchar sobre tu próximo proyecto. Ya sea una aplicación web, una landing page o cualquier idea que tengas, estoy aquí para ayudarte a convertirla en realidad.
           </p>
 
-          <div className="contact-methods">
+          <div className="contact-details">
             <div className="contact-item">
               <span className="contact-icon">📧</span>
-              <div className="contact-details">
+              <div className="contact-text">
                 <h4>Email</h4>
-                <p>tu.email@ejemplo.com</p>
+                <p>tu@email.com</p>
               </div>
             </div>
+            
             <div className="contact-item">
               <span className="contact-icon">📱</span>
-              <div className="contact-details">
+              <div className="contact-text">
                 <h4>Teléfono</h4>
                 <p>+1 (555) 123-4567</p>
               </div>
             </div>
+            
             <div className="contact-item">
               <span className="contact-icon">📍</span>
-              <div className="contact-details">
+              <div className="contact-text">
                 <h4>Ubicación</h4>
-                <p>Tu Ciudad, País</p>
+                <p>Ciudad, País</p>
               </div>
             </div>
           </div>
 
-          <div className="social-networks">
-            <h4>Sígueme en:</h4>
-            <div className="social-links-extended">
-              <a href="#" className="social-link-ext">💼 LinkedIn</a>
-              <a href="#" className="social-link-ext">🐙 GitHub</a>
-              <a href="#" className="social-link-ext">🐦 Twitter</a>
+          <div className="social-links">
+            <h4>Sígueme</h4>
+            <div className="social-grid">
+              <a href="#" className="social-link">GitHub</a>
+              <a href="#" className="social-link">LinkedIn</a>
+              <a href="#" className="social-link">Twitter</a>
             </div>
           </div>
         </div>
 
-        <div className="contacto-form">
-          <form onSubmit={handleSubmit} className="contact-form">
+        <div className="contacto-form-container">
+          <form className="contacto-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="nombre">Nombre</label>
               <input
@@ -94,7 +95,7 @@ const ContactoSection = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="tu.email@ejemplo.com"
+                placeholder="tu@email.com"
                 required
               />
             </div>
