@@ -1,15 +1,25 @@
-/* Variables CSS para temas dinámicos */
+/* Variables CSS para tema elegante y femenino */
 :root {
-  --primary-color: #2C3E50;
-  --secondary-color: #34495E;
-  --accent-color: #3498DB;
-  --background-color: #FFFFFF;
-  --text-color: #2C3E50;
-  --text-light-color: #7F8C8D;
+  --primary-color: #8B5A83;
+  --secondary-color: #A67C9A;
+  --accent-color: #D4A5C6;
+  --background-color: #FDF8FD;
+  --text-color: #4A3245;
+  --text-light-color: #8B7A8B;
   --border-radius: 12px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+  --shadow: 0 10px 30px rgba(139, 90, 131, 0.15);
+  --shadow-hover: 0 20px 60px rgba(139, 90, 131, 0.25);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Colores adicionales para gradientes elegantes */
+  --gradient-primary: linear-gradient(135deg, #8B5A83 0%, #A67C9A 50%, #D4A5C6 100%);
+  --gradient-secondary: linear-gradient(135deg, #FDF8FD 0%, #F5EDF5 100%);
+  --gradient-accent: linear-gradient(135deg, #D4A5C6 0%, #E6C8DE 100%);
+  
+  /* Colores de apoyo */
+  --pink-soft: #F0E6ED;
+  --mauve-light: #E6D7E3;
+  --purple-mist: #D9C7D6;
 }
 
 /* Reset y base */
@@ -25,14 +35,15 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
-  overflow: hidden;
-  height: 100vh;
+  overflow-x: hidden;
+  min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 .App {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
   transition: var(--transition);
 }
 
@@ -167,7 +178,12 @@ body {
   }
 }
 
-/* Responsive */
+/* Responsive Design */
+.App {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 @media (max-width: 768px) {
   .App {
     flex-direction: column;
@@ -175,10 +191,47 @@ body {
   
   .section-title {
     font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
   
   .btn {
-    padding: 10px 20px;
-    font-size: 12px;
+    padding: 12px 24px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
+  
+  /* Espaciado mejorado para móviles */
+  .section {
+    padding: 2rem 1rem;
+  }
+  
+  /* Tipografía responsiva */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  /* Mejoras en interacciones táctiles */
+  button, .btn, .nav-item {
+    min-height: 44px; /* Tamaño mínimo recomendado para touch */
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .btn {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+  
+  /* Tipografía más pequeña para pantallas muy pequeñas */
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
 }

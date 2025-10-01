@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
 import './App.css'
+import './styles/responsive-utils.css'
 
 function App() {
   const [activeSection, setActiveSection] = useState('inicio')

@@ -1,0 +1,140 @@
+/* Utilidades para diseño responsivo */
+
+/* Ocultar/mostrar elementos según tamaño de pantalla */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+  
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+/* Contenedores responsivos */
+.responsive-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 769px) {
+  .responsive-container {
+    padding: 0 2rem;
+  }
+}
+
+/* Espaciado responsivo */
+.spacing-mobile {
+  padding: 1rem 0;
+}
+
+.spacing-tablet {
+  padding: 1.5rem 0;
+}
+
+.spacing-desktop {
+  padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .spacing-responsive {
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .spacing-responsive {
+    padding: 1.5rem 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .spacing-responsive {
+    padding: 2rem 0;
+  }
+}
+
+/* Texto responsivo */
+.text-responsive {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .text-responsive {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 1025px) {
+  .text-responsive {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Grid responsivo */
+.responsive-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 769px) {
+  .responsive-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .responsive-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .responsive-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Botones responsivos */
+.btn-responsive {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .btn-responsive {
+    width: auto;
+    margin: 0;
+    display: inline-block;
+  }
+}
+
+/* Mejoras para touch */
+@media (max-width: 768px) {
+  .touch-friendly {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  /* Espaciado extra entre elementos interactivos */
+  .touch-spacing > * + * {
+    margin-top: 0.5rem;
+  }
+}

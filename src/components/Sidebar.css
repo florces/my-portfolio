@@ -1,7 +1,7 @@
 /* Sidebar Styles */
 .sidebar {
   width: 320px;
-  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  background: var(--gradient-primary);
   color: white;
   padding: 1.5rem 0;
   display: flex;
@@ -14,6 +14,7 @@
   box-shadow: var(--shadow);
   overflow: hidden;
   justify-content: space-between;
+  backdrop-filter: blur(10px);
 }
 
 .sidebar-header {
@@ -27,18 +28,26 @@
 }
 
 .profile-avatar {
-  width: 70px;
-  height: 70px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-color), #2980B9);
+  background: var(--gradient-accent);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
   font-size: 1.8rem;
   font-weight: bold;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  animation: pulse 2s infinite;
+  box-shadow: 0 8px 25px rgba(139, 90, 131, 0.3);
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .profile-name {
@@ -94,9 +103,10 @@
 
 .nav-item:hover,
 .nav-item.active {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   color: white;
   transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(212, 165, 198, 0.2);
 }
 
 .nav-item.active::before {
@@ -206,29 +216,29 @@
 
 /* Botón de idiomas */
 .language-selector {
-  padding: 1rem 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  flex-shrink: 0;
+  margin-top: auto;
+  padding: 1rem 0;
 }
 
 .language-button {
   width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid transparent;
-  border-radius: var(--border-radius);
-  padding: 0.8rem;
-  cursor: pointer;
-  transition: var(--transition);
-  color: white;
-  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  background: var(--gradient-accent);
+  color: var(--primary-color);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
   font-weight: 600;
-  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  margin: 0 1rem;
 }
 
 .language-button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: var(--accent-color);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 165, 198, 0.4);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Footer del sidebar */
@@ -248,7 +258,7 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,60 +266,186 @@
   text-decoration: none;
   transition: var(--transition);
   font-size: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .social-link:hover {
   background: var(--accent-color);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 165, 198, 0.3);
+  color: var(--primary-color);
+}
+
+/* Estilos específicos para el logo de LinkedIn */
+.linkedin-link {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.linkedin-link:hover {
+  background: transparent !important;
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) saturate(100%) invert(100%);
+  transition: var(--transition);
+}
+
+/* Botón hamburguesa para móviles */
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-menu-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-toggle:active {
+  transform: scale(0.95);
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger-line.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Overlay para cerrar menú en móvil */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .mobile-menu-overlay {
+    display: block;
+  }
+  
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .sidebar.mobile-open {
+    left: 0;
   }
   
   .sidebar-header {
-    padding: 0 1rem 1rem;
-    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    margin-top: 2rem;
   }
   
   .profile-avatar {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+    width: 80px;
+    height: 80px;
   }
   
   .profile-name {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+  }
+  
+  .profile-title {
+    font-size: 0.85rem;
   }
   
   .sidebar-nav {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
   
   .nav-item {
     padding: 0.75rem 1rem;
     margin-bottom: 0.25rem;
+    font-size: 0.9rem;
   }
   
-  .theme-selector {
+  .language-selector {
     padding: 1rem;
   }
   
-  .theme-options {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
+  .language-button {
+    margin: 0;
+    font-size: 0.85rem;
   }
   
-  .theme-option {
-    padding: 0.5rem;
+  .sidebar-footer {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 280px;
   }
   
-  .theme-name {
-    font-size: 0.7rem;
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-name {
+    font-size: 1.2rem;
+  }
+  
+  .nav-item {
+    padding: 0.7rem 1.1rem;
+    font-size: 0.95rem;
   }
 }
