@@ -28,16 +28,18 @@ const AnimatedBackground = () => {
   useEffect(() => {
     if (dimensions.width === 0 || dimensions.height === 0) return;
 
-    const newCircles = Array.from({ length: SHOW_BRANDS ? 40 : 15 }).map((_, index) => ({
-      id: index,
-      x: Math.random() * (dimensions.width - 60),
-      y: -200 - Math.random() * 500, // Posición inicial muy arriba y distribuida
-      size: 8 + Math.random() * 400,
-      baseOpacity: 0.1 + Math.random() * 0.2,
-      speed: 15 + Math.random() * 20, // Velocidad en segundos
-      delay: Math.random() * 15, // Delay distribuido en 15 segundos
-      scale: 0.5 + Math.random() * 0.8,
-    }));
+    const newCircles = Array.from({ length: SHOW_BRANDS ? 40 : 20 }).map((_, index) => {
+      return {
+        id: index,
+        x: Math.random() * (dimensions.width - 60),
+        y: -100 - Math.random() * 200, // Todas empiezan desde arriba
+        size: 8 + Math.random() * 400,
+        baseOpacity: 0.1 + Math.random() * 0.2,
+        speed: 15 + Math.random() * 15, // Velocidad más variada
+        delay: index * 0.3 + Math.random() * 2, // Delay escalonado más suave
+        scale: 0.5 + Math.random() * 0.8,
+      };
+    });
 
     setCircles(newCircles);
   }, [dimensions, SHOW_BRANDS]);
