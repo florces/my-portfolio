@@ -115,6 +115,11 @@
 
 .nav-icon {
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .nav-label {
@@ -221,7 +226,7 @@
 }
 
 .language-button {
-  width: 100%;
+  width: 90%;
   padding: 0.75rem 1rem;
   background: var(--gradient-accent);
   color: var(--primary-color);
@@ -232,6 +237,10 @@
   transition: all 0.3s ease;
   font-size: 0.9rem;
   margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .language-button:hover {
@@ -277,25 +286,63 @@
 }
 
 /* Estilos específicos para el logo de LinkedIn */
-.linkedin-link {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  width: auto !important;
-  height: auto !important;
-}
-
-.linkedin-link:hover {
-  background: transparent !important;
-  transform: translateY(-2px);
-  box-shadow: none !important;
-}
-
 .social-icon {
   width: 24px;
   height: 24px;
-  filter: brightness(0) saturate(100%) invert(100%);
   transition: var(--transition);
+  color: white;
+}
+
+/* Estilos específicos para cada red social */
+.linkedin-link {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.linkedin-link:hover {
+  background: #0077b5 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3) !important;
+}
+
+.github-link {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.github-link:hover {
+  background: #333 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.3) !important;
+}
+
+.tiktok-link {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.tiktok-link:hover {
+  background: #fe2c55 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(254, 44, 85, 0.3) !important;
 }
 
 /* Botón hamburguesa para móviles */

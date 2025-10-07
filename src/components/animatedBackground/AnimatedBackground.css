@@ -1,0 +1,137 @@
+/* AnimatedBackground.css */
+
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.animated-particle {
+  position: absolute;
+  top: 0;
+  border-radius: 4px; /* Cuadrados con bordes ligeramente redondeados */
+  will-change: transform, opacity;
+  
+  /* Animaciones simplificadas */
+  animation: 
+    particle-fall var(--fall-duration) linear infinite,
+    particle-fade var(--fall-duration) linear infinite;
+  
+  animation-delay: var(--delay);
+  transform-origin: center center;
+}
+
+/* Animación de caída principal */
+@keyframes particle-fall {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px));
+  }
+}
+
+/* Animación de opacidad que aparece y desaparece suavemente */
+@keyframes particle-fade {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--base-opacity);
+  }
+  90% {
+    opacity: var(--base-opacity);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Animación de rotación continua */
+@keyframes particle-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animación de movimiento horizontal suave */
+@keyframes particle-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(var(--horizontal-range));
+  }
+  66% {
+    transform: translateX(calc(-1 * var(--horizontal-range)));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animación de escala que simula perspectiva */
+@keyframes particle-scale {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(calc(var(--scale) * 0.5));
+  }
+  15% {
+    transform: scale(var(--scale));
+  }
+  85% {
+    transform: scale(var(--scale));
+  }
+  100% {
+    transform: scale(calc(var(--scale) * 0.5));
+  }
+}
+
+/* Estilos para iconos de marca cuando SHOW_BRANDS = true */
+.brand-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-icon svg {
+  width: 100%;
+  height: 100%;
+  color: var(--secondary-color, #6b63ff);
+  opacity: 0.7;
+}
+
+/* Optimizaciones de rendimiento */
+.animated-particle {
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Media query para dispositivos de menor rendimiento */
+@media (prefers-reduced-motion: reduce) {
+  .animated-particle {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    opacity: 0.1 !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-particle {
+    animation-duration: calc(var(--fall-duration) * 0.8);
+  }
+}

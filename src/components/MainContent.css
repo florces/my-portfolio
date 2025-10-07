@@ -4,8 +4,8 @@
   flex: 1;
   background: var(--background-color);
   min-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  height: 100vh; /* Altura fija en desktop */
+  overflow: hidden; /* Sin scroll en desktop */
   transition: var(--transition);
 }
 
@@ -13,10 +13,12 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  height: 100vh; /* Altura fija en desktop */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden; /* Sin scroll interno en desktop */
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -285,10 +287,15 @@
 @media (max-width: 768px) {
   .main-content {
     margin-left: 0;
+    height: auto; /* Altura automática en móvil */
+    overflow-y: auto; /* Activar scroll vertical en móvil */
+    overflow-x: hidden; /* Mantener sin scroll horizontal */
   }
   
   .content-container {
     padding: 2rem 1rem;
+    height: auto; /* Altura automática en móvil */
+    overflow: visible; /* Permitir overflow en móvil */
   }
   
   .hero-content {
@@ -858,6 +865,7 @@
     height: auto;
     min-height: calc(100vh - 80px);
     justify-content: flex-start;
+    overflow: visible; /* Permitir overflow en móvil */
   }
   
   /* Sección Inicio */

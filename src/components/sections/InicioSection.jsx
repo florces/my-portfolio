@@ -9,7 +9,7 @@ const InicioSection = () => {
             ¡Hola! soy <span className="accent-text">Florencia</span>
           </h1>
           <h2 className="hero-subtitle">
-            Desarrolladora Full Stack especializada en React
+            
           </h2>
           <p className="hero-description">
             Transformo ideas en experiencias digitales excepcionales. Con pasión por el código limpio y las soluciones innovadoras, creo aplicaciones web que marcan la diferencia.

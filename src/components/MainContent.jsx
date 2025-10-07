@@ -6,6 +6,7 @@ import SkillsSection from './sections/SkillsSection'
 import ContactoSection from './sections/ContactoSection'
 import IdiomaSection from './sections/IdiomaSection'
 import './MainContent.css'
+import AnimatedBackground from './animatedBackground/AnimatedBackground'
 
 const MainContent = ({ activeSection }) => {
   const renderSection = () => {
@@ -30,7 +31,22 @@ const MainContent = ({ activeSection }) => {
   return (
     <main className="main-content">
       <div className="content-container">
-        {renderSection()}
+        <div style={{ 
+          position: 'relative', 
+          width: '100%', 
+          height: '100vh',
+          overflow: 'hidden'
+        }}>
+          <AnimatedBackground />
+          <div style={{ 
+            position: 'relative', 
+            zIndex: 10,
+            height: '100%',
+            width: '100%'
+          }}>
+            {renderSection()}
+          </div>
+        </div>
       </div>
     </main>
   )

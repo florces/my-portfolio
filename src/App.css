@@ -36,6 +36,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  overflow-y: hidden; /* No scroll en desktop */
   min-height: 100vh;
   scroll-behavior: smooth;
 }
@@ -185,8 +186,14 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Habilitar scroll solo en dispositivos móviles */
+  body {
+    overflow-y: auto;
+  }
+  
   .App {
     flex-direction: column;
+    height: auto;
   }
   
   .section-title {
