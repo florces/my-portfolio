@@ -13,9 +13,9 @@
 
 .animated-particle {
   position: absolute;
-  top: 0;
-  border-radius: 4px; /* Cuadrados con bordes ligeramente redondeados */
+  border-radius: 4px;
   will-change: transform, opacity;
+  opacity: 0; /* Empezar invisible */
   
   /* Animaciones simplificadas */
   animation: 
@@ -29,10 +29,10 @@
 /* Animación de caída principal */
 @keyframes particle-fall {
   0% {
-    transform: translateY(-100px);
+    transform: translateY(0px);
   }
   100% {
-    transform: translateY(calc(100vh + 100px));
+    transform: translateY(calc(100vh + 300px));
   }
 }
 
@@ -41,11 +41,17 @@
   0% {
     opacity: 0;
   }
-  10% {
+  5% {
+    opacity: 0;
+  }
+  15% {
     opacity: var(--base-opacity);
   }
-  90% {
+  85% {
     opacity: var(--base-opacity);
+  }
+  95% {
+    opacity: 0;
   }
   100% {
     opacity: 0;

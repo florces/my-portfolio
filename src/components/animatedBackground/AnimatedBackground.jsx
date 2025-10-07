@@ -7,7 +7,7 @@ const AnimatedBackground = () => {
   const [circles, setCircles] = useState([]);
 
   const SHOW_BRANDS = false;
-  const SECONDARY_COLOR = '#6b63ff22'; // Color de ejemplo, ajusta según tus constantes
+  const SECONDARY_COLOR = '#c36af73c'; // Color de ejemplo, ajusta según tus constantes
 
   // Actualizar dimensiones del contenedor
   useEffect(() => {
@@ -31,13 +31,12 @@ const AnimatedBackground = () => {
     const newCircles = Array.from({ length: SHOW_BRANDS ? 40 : 15 }).map((_, index) => ({
       id: index,
       x: Math.random() * (dimensions.width - 60),
-      size: 20 + Math.random() * 400,
-      baseOpacity: 0.2 + Math.random() * 0.3,
-      speed: 8 + Math.random() * 12, // Velocidad en segundos
-      rotationSpeed: 8 + Math.random() * 15, // Velocidad de rotación en segundos
-      horizontalRange: 15 + Math.random() * 25,
-      delay: Math.random() * 5, // Delay en segundos
-      scale: 0.8 + Math.random() * 0.4,
+      y: -200 - Math.random() * 500, // Posición inicial muy arriba y distribuida
+      size: 8 + Math.random() * 400,
+      baseOpacity: 0.1 + Math.random() * 0.2,
+      speed: 15 + Math.random() * 20, // Velocidad en segundos
+      delay: Math.random() * 15, // Delay distribuido en 15 segundos
+      scale: 0.5 + Math.random() * 0.8,
     }));
 
     setCircles(newCircles);
@@ -46,13 +45,11 @@ const AnimatedBackground = () => {
   const renderCircle = (circle) => {
     const animationStyle = {
       '--fall-duration': `${circle.speed}s`,
-      '--rotation-duration': `${circle.rotationSpeed}s`,
-      '--horizontal-duration': `${circle.rotationSpeed}s`,
       '--delay': `${circle.delay}s`,
-      '--horizontal-range': `${circle.horizontalRange}px`,
       '--base-opacity': circle.baseOpacity,
       '--scale': circle.scale,
       left: `${circle.x}px`,
+      top: `${circle.y}px`, // Posición inicial específica
       width: `${circle.size}px`,
       height: `${circle.size}px`,
       backgroundColor: SECONDARY_COLOR,
